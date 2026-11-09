@@ -22,9 +22,9 @@ test('the menu file has no prices and the photos are the ones he sent', () => {
   assert.match(menu, /photo\('tomato-lettuce\.jpg'\)/)
   assert.match(menu, /photo\('tomato-salad\.jpg'\)/)
   assert.match(menu, /photo\('greens-croutons\.jpg'\)/)
-  assert.match(menu, /photo\('corey-skinner\.jpg'\)/)
+  assert.match(menu, /photo\('cory-skinner\.jpg'\)/)
   assert.match(menu, /Montana Mac BBQ/)
-  assert.match(menu, /Corey Skinner/)
+  assert.match(menu, /Cory Skinner/)
   assert.match(menu, /16 years/)
   assert.match(menu, /Not set/)
   assert.doesNotMatch(menu, /\$\d/)
@@ -50,7 +50,7 @@ test('the menu file has no prices and the photos are the ones he sent', () => {
     'tomato-lettuce.jpg',
     'tomato-salad.jpg',
     'greens-croutons.jpg',
-    'corey-skinner.jpg',
+    'cory-skinner.jpg',
   ]) {
     const file = new URL(`../public/photos/${name}`, import.meta.url)
     assert.ok(statSync(file).size > 1000, name)
@@ -79,18 +79,18 @@ test('the screens show the order path and no confirmed price', { timeout: 60000 
     assert.match(guest, /Select item/)
     assert.match(guest, /Not set/)
     assert.match(guest, /Montana Mac BBQ/)
-    assert.match(guest, /Corey Skinner/)
-    assert.match(guest, /Meet Corey Skinner/)
+    assert.match(guest, /Cory Skinner/)
+    assert.match(guest, /Meet Cory Skinner/)
     assert.match(guest, /16 years/)
     assert.match(guest, /Come check him out/)
-    assert.match(guest, /\/photos\/corey-skinner\.jpg/)
+    assert.match(guest, /\/photos\/cory-skinner\.jpg/)
     assert.match(guest, /Chips and salsa platter/)
     assert.match(guest, /\/photos\/chips-salsa\.jpg/)
     assert.match(guest, /photo-frame/)
     assert.match(guest, /Corn chips/)
     assert.match(guest, /From his photos\./)
     assert.match(guest, /Sauce on the side/)
-    assert.match(guest, /Corey story/)
+    assert.match(guest, /Cory story/)
     assert.doesNotMatch(guest, /Name not in yet|Sample plate/)
     assert.match(guest, /Send to register/)
     assert.match(guest, /Menu/)

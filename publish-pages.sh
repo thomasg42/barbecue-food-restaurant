@@ -104,7 +104,7 @@ fi
 served=""
 for _ in $(seq 1 30); do
   page=$(curl -fsS "${URL}?check=$(date +%s)" || true)
-  if [[ "$page" == *"$MARKER"* && "$page" == *"Corey Skinner"* ]]; then
+  if [[ "$page" == *"$MARKER"* && "$page" == *"Cory Skinner"* ]]; then
     served=yes
     break
   fi

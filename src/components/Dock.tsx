@@ -26,12 +26,12 @@ export function Dock({
           </span>
         </div>
       ) : null}
-      <nav className="dock" aria-label="Menu, Corey, and cart">
+      <nav className="dock" aria-label="Menu, Cory, and cart">
         <button type="button" className={tab === 'menu' ? 'on' : ''} aria-current={tab === 'menu' ? 'page' : undefined} onClick={() => onTab('menu')}>
           Menu
         </button>
-        <button type="button" className={tab === 'story' ? 'on' : ''} aria-label="Corey story" aria-current={tab === 'story' ? 'page' : undefined} onClick={() => onTab('story')}>
-          Corey
+        <button type="button" className={tab === 'story' ? 'on' : ''} aria-label="Cory story" aria-current={tab === 'story' ? 'page' : undefined} onClick={() => onTab('story')}>
+          Cory
         </button>
         <button type="button" className={tab === 'cart' ? 'on' : ''} aria-current={tab === 'cart' ? 'page' : undefined} onClick={() => onTab('cart')}>
           Cart
