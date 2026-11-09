@@ -47,7 +47,9 @@ export function ItemSheet({
             Close
           </button>
           {item.photo ? (
-            <img className="sheet-photo" src={item.photo} alt={item.name} />
+            <span className="photo-frame sheet-frame">
+              <img className={`shot shot-${item.id}`} src={item.photo} alt={item.name} />
+            </span>
           ) : (
             <div className="sheet-blank">Sample</div>
           )}

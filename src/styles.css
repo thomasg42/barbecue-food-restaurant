@@ -192,11 +192,57 @@ main {
   border-radius: 18px;
   overflow: hidden;
   text-align: left;
+  box-shadow:
+    0 1px 0 rgba(255, 236, 214, 0.28),
+    0 16px 28px rgba(0, 0, 0, 0.42);
 }
 
-.tile img,
+.photo-frame {
+  position: relative;
+  display: block;
+  width: calc(100% - 20px);
+  margin: 10px 10px 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #2a1810;
+  box-shadow:
+    0 1px 0 rgba(255, 248, 240, 0.75),
+    0 14px 18px rgba(42, 18, 8, 0.34);
+  transform: perspective(720px) rotateX(7deg);
+  transform-origin: center bottom;
+}
+
+.sheet-frame {
+  aspect-ratio: 5 / 4;
+  border-radius: 16px;
+}
+
+.photo-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.14);
+}
+
+.shot-chips-salsa {
+  object-position: center 42%;
+}
+
+.shot-ham-board {
+  object-position: center 46%;
+}
+
+.shot-fruit-tray {
+  object-position: center 62%;
+  transform: scale(1.2);
+}
+
 .tile-blank,
-.sheet-photo,
 .sheet-blank {
   width: 100%;
   aspect-ratio: 4 / 3;

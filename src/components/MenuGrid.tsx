@@ -32,7 +32,9 @@ export function MenuGrid({
         {items.map((item) => (
           <button key={item.id} type="button" className="tile" onClick={() => onOpen(item.id)}>
             {item.photo ? (
-              <img src={item.photo} alt={item.name} />
+              <span className="photo-frame">
+                <img className={`shot shot-${item.id}`} src={item.photo} alt={item.name} />
+              </span>
             ) : (
               <span className="tile-blank">Sample</span>
             )}

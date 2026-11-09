@@ -7,9 +7,9 @@ The GitHub repo name `barbecue-food-restaurant` is only the project name. It is 
 Public source: https://github.com/thomasg42/barbecue-food-restaurant
 Menu, after the publish script: https://thomasg42.github.io/barbecue-food-restaurant/
 
-On that public link, the order stays on the phone that opened it. The iPad and the kitchen computer share one ticket only while this Mac server is running.
+On that public link, the order stays on the phone that opened it. The iPad and the kitchen computer share one ticket only while this Mac server is running. GitHub Pages cannot run the ticket server.
 
-Do not publish it. Do not add it to the Command Center. Do not put it in the ownership registry. GitHub Pages cannot run the ticket server.
+The menu is published. The Command Center has the URL in the working registry on this Mac. Do not put this demo in the ownership registry, and do not make a client folder until he sends the business name.
 
 ## What he can tap
 

@@ -7,6 +7,11 @@ const root = new URL('..', import.meta.url)
 
 test('the menu file has no prices and the photos are the ones he sent', () => {
   const menu = readFileSync(new URL('../src/data/menu.ts', import.meta.url), 'utf8')
+  assert.match(menu, /import\.meta\.env\.BASE_URL/)
+  assert.match(menu, /photos\/\$\{file\}/)
+  assert.match(menu, /photo\('chips-salsa\.jpg'\)/)
+  assert.match(menu, /photo\('ham-board\.jpg'\)/)
+  assert.match(menu, /photo\('fruit-tray\.jpg'\)/)
   assert.match(menu, /Not set/)
   assert.doesNotMatch(menu, /\$\d/)
   assert.doesNotMatch(menu, /price\s*:/i)
@@ -14,6 +19,7 @@ test('the menu file has no prices and the photos are the ones he sent', () => {
   const css = readFileSync(new URL('../src/styles.css', import.meta.url), 'utf8')
   assert.match(css, /height:\s*100dvh/)
   assert.match(css, /flex-wrap:\s*wrap/)
+  assert.match(css, /scale\(1\.14\)/)
   assert.doesNotMatch(css, /position:\s*sticky/)
   for (const name of ['chips-salsa.jpg', 'ham-board.jpg', 'fruit-tray.jpg']) {
     const file = new URL(`../public/photos/${name}`, import.meta.url)
@@ -44,6 +50,8 @@ test('the screens show the order path and no confirmed price', { timeout: 60000 
     assert.match(guest, /Not set/)
     assert.match(guest, /Name not in yet/)
     assert.match(guest, /Chips and salsa platter/)
+    assert.match(guest, /\/photos\/chips-salsa\.jpg/)
+    assert.match(guest, /photo-frame/)
     assert.match(guest, /Corn chips/)
     assert.match(guest, /Sample plate\. Not from his kitchen\./)
     assert.match(guest, /Sauce on the side/)

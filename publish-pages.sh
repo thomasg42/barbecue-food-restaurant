@@ -96,7 +96,8 @@ if gh api "repos/$REPO/pages" >/dev/null 2>&1; then
   gh api -X PUT "repos/$REPO/pages" -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null
   echo "   Pages set to gh-pages."
 else
-  gh api -X POST "repos/$REPO/pages" -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null
+  gh api -X POST "repos/$REPO/pages" -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null \
+    || gh api -X PUT "repos/$REPO/pages" -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null
   echo "   Pages turned on. First build takes 1 to 3 minutes."
 fi
 
