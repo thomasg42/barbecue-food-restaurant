@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import { CartPanel } from './components/CartPanel.tsx'
 import { Dock } from './components/Dock.tsx'
+import type { GuestTab } from './components/Dock.tsx'
 import { ItemSheet } from './components/ItemSheet.tsx'
+import { StoryPanel } from './components/StoryPanel.tsx'
 import { KitchenScreen } from './components/KitchenScreen.tsx'
 import { MenuGrid } from './components/MenuGrid.tsx'
 import { RegisterScreen } from './components/RegisterScreen.tsx'
@@ -32,8 +34,8 @@ function linkCopy(link: 'saved' | 'waiting') {
 }
 
 function GuestApp() {
-  const [tab, setTab] = useState<'menu' | 'cart'>('menu')
-  const [category, setCategory] = useState<Category>('Platters')
+  const [tab, setTab] = useState<GuestTab>('menu')
+  const [category, setCategory] = useState<Category>('Plates')
   const [cart, setCart] = useState<CartState>(() => loadCart())
   const [openId, setOpenId] = useState<string | null>(null)
   const [note, setNote] = useState('')
@@ -91,6 +93,8 @@ function GuestApp() {
             onCategory={setCategory}
             onOpen={openItem}
           />
+        ) : tab === 'story' ? (
+          <StoryPanel />
         ) : (
           <CartPanel
             lines={cart.lines}

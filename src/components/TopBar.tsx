@@ -1,3 +1,4 @@
+import { BUSINESS, OWNER } from '../data/menu.ts'
 import type { Station } from '../station.ts'
 import { stationHref } from '../station.ts'
 
@@ -11,8 +12,8 @@ export function TopBar({ station, link }: { station: Station; link?: string }) {
   return (
     <header className="top">
       <div>
-        <p className="brand">Barbecue</p>
-        <p className="sub">Demo. Name not in yet.</p>
+        <p className="brand">{BUSINESS}</p>
+        <p className="sub">{OWNER}</p>
       </div>
       <div className="top-side">
         {link ? <p className="link-note">{link}</p> : null}

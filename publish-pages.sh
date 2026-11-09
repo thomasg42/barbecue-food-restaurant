@@ -4,17 +4,17 @@
 # Menu:   https://thomasg42.github.io/barbecue-food-restaurant/
 #
 # Run from Thomas's Mac Terminal:
-#   bash "$HOME/Documents/FGA-Brain/FGA-AIOS/forever-gold-agency/forever-gold-ai/demos/bbq-order/publish-pages.sh"
+#   bash "$HOME/Documents/FGA-Brain/FGA-AIOS/clients/montana-mac-bbq/website/publish-pages.sh"
 #
 # The public page is the menu. An order stays on the phone that opened it.
 # The iPad and the kitchen computer share tickets through the Mac server.
 set -euo pipefail
 
-SRC="$HOME/Documents/FGA-Brain/FGA-AIOS/forever-gold-agency/forever-gold-ai/demos/bbq-order"
+SRC="$HOME/Documents/FGA-Brain/FGA-AIOS/clients/montana-mac-bbq/website"
 REPO="thomasg42/barbecue-food-restaurant"
 WORK="$HOME/Documents/barbecue-food-restaurant-site"
 URL="https://thomasg42.github.io/barbecue-food-restaurant/"
-MARKER="Name not in yet."
+MARKER="Montana Mac BBQ"
 
 echo "1/6 Testing (stops here if anything fails; nothing is published)..."
 cd "$SRC"
@@ -38,7 +38,7 @@ gh auth status >/dev/null 2>&1 || { echo "GitHub CLI is not logged in. Run: gh a
 if gh repo view "$REPO" >/dev/null 2>&1; then
   echo "   Repo exists: https://github.com/$REPO"
 else
-  gh repo create "$REPO" --public --description "Barbecue ordering demo. Business name not set."
+  gh repo create "$REPO" --public --description "Montana Mac BBQ ordering demo."
   echo "   Created https://github.com/$REPO"
 fi
 if [ ! -d "$WORK/.git" ]; then
@@ -104,7 +104,7 @@ fi
 served=""
 for _ in $(seq 1 30); do
   page=$(curl -fsS "${URL}?check=$(date +%s)" || true)
-  if [[ "$page" == *"$MARKER"* && "$page" == *"Barbecue demo"* ]]; then
+  if [[ "$page" == *"$MARKER"* && "$page" == *"Corey Skinner"* ]]; then
     served=yes
     break
   fi

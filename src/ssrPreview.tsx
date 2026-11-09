@@ -2,6 +2,7 @@ import { renderToStaticMarkup } from 'react-dom/server'
 import { CartPanel } from './components/CartPanel.tsx'
 import { Dock } from './components/Dock.tsx'
 import { ItemSheet } from './components/ItemSheet.tsx'
+import { StoryPanel } from './components/StoryPanel.tsx'
 import { KitchenScreen } from './components/KitchenScreen.tsx'
 import { MenuGrid } from './components/MenuGrid.tsx'
 import { RegisterScreen } from './components/RegisterScreen.tsx'
@@ -17,7 +18,7 @@ import {
   sendToRegister,
 } from './orders.mjs'
 
-const chips = MENU[0]
+const chips = MENU.find((item) => item.id === 'chips-salsa')
 const ribs = MENU.find((item) => item.id === 'ribs')
 if (!chips || !ribs) throw new Error('Menu is missing the demo plates')
 
@@ -46,7 +47,7 @@ export function guestHtml() {
       <TopBar station="guest" />
       <MenuGrid items={itemsIn('Platters')} category="Platters" onCategory={() => undefined} onOpen={() => undefined} />
       <ItemSheet
-        item={chips}
+        item={chips ?? null}
         note=""
         sauce={false}
         onNote={() => undefined}
@@ -72,6 +73,7 @@ export function guestHtml() {
         onRemove={() => undefined}
         onSend={() => undefined}
       />
+      <StoryPanel />
       <Dock tab="cart" lines={cart} onTab={() => undefined} />
     </div>,
   )

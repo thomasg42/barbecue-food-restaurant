@@ -183,7 +183,7 @@ server.on('request', (req, res) => {
 })
 
 server.listen(port, '0.0.0.0', () => {
-  console.log(`Barbecue demo`)
+  console.log(`Montana Mac BBQ`)
   console.log(`Menu     http://127.0.0.1:${port}/`)
   console.log(`Register http://127.0.0.1:${port}/register`)
   console.log(`Kitchen  http://127.0.0.1:${port}/kitchen`)

@@ -59,7 +59,7 @@ export function ItemSheet({
             Price <b>{PRICE}</b>
           </p>
           <p className="origin">
-            {item.sample ? 'Sample plate. Not from his kitchen.' : 'From the photo he sent.'}
+            {item.sample ? 'Sample plate. Not from his kitchen.' : 'From his photos.'}
           </p>
           <h3>Ingredients</h3>
           <ul className="ingredients">
